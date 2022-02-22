@@ -12,6 +12,19 @@ const Review = () => {
   const [index, setIndex] = useState(0);
   console.log(people);
   const { id, name, job, image, text } = people[index];
+  const nextPerson = () => {
+    setIndex((index) => {
+      let newIndex = index + 1;
+      return newIndex;
+    });
+  };
+  const preProson = () => {
+    setIndex((index) => {
+      let newIndex = index - 1;
+      return newIndex;
+    });
+  };
+
   return (
     <article className="review">
       <div className="img-container">
@@ -24,10 +37,10 @@ const Review = () => {
       <p className="job">{job}</p>
       <p className="info">{text}</p>
       <div className="buttonContainer">
-        <button className="prev-btn">
+        <button className="prev-btn" onClick={preProson}>
           <FontAwesomeIcon icon={faChevronLeft} />
         </button>
-        <button className="next-btn">
+        <button className="next-btn" onClick={nextPerson}>
           <FontAwesomeIcon icon={faChevronRight} />
         </button>
       </div>
