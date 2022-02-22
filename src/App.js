@@ -4,8 +4,14 @@ import './style.css';
 
 export default function App() {
   return (
-    <div>
-      <h2>reviews project setup</h2>
-    </div>
+    <main>
+      <section className="container">
+        <div className="title">
+          <h2>Our Review</h2>
+          <div className="underline"></div>
+        </div>
+        <Review />
+      </section>
+    </main>
   );
 }
