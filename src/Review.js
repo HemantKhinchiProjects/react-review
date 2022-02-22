@@ -1,6 +1,12 @@
 import React, { useState } from 'react';
 import people from './data';
-import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {
+  FaChevronLeft,
+  faChevronRight,
+  faQuoteRight,
+} from '@fortawesome/free-solid-svg-icons';
+//import { FaChevronLeft, FaChevronRight, FaQuoteRight } from 'react-icons/fa';
 
 const Review = () => {
   const [index, setIndex] = useState(0);
@@ -11,9 +17,12 @@ const Review = () => {
       <div className="img-container">
         <img src={image} alt={name} className="person-img" />
         <span className="quote-icon">
-          <FaQuoteRight />
+          <FontAwesomeIcon icon={faQuoteRight} size={'2x'} />
         </span>
       </div>
+      <h4 className="author">{name}</h4>
+      <p className="job">{job}</p>
+      <p className="info">{text}</p>
     </article>
   );
 };
