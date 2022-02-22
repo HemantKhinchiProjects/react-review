@@ -26,7 +26,7 @@ const Review = () => {
     if (rendomNumber === index) {
       rendomNumber = index + 1;
     }
-    setIndex(checkNumber(rendomNumber));
+    setIndex(checkNumber(rendomNumber)); 
   };
 
   const nextPerson = () => {
