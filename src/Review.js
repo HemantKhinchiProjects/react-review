@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import people from './data';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  FaChevronLeft,
+  faChevronLeft,
   faChevronRight,
   faQuoteRight,
 } from '@fortawesome/free-solid-svg-icons';
@@ -23,6 +23,15 @@ const Review = () => {
       <h4 className="author">{name}</h4>
       <p className="job">{job}</p>
       <p className="info">{text}</p>
+      <div className="buttonContainer">
+        <button className="prev-btn">
+          <FontAwesomeIcon icon={faChevronLeft} />
+        </button>
+        <button className="next-btn">
+          <FontAwesomeIcon icon={faChevronRight} />
+        </button>
+      </div>
+      <button className="random-btn">Surprise me</button>
     </article>
   );
 };
