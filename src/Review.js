@@ -10,7 +10,7 @@ import {
 
 const Review = () => {
   const [index, setIndex] = useState(0);
-  console.log(people);
+
   const { id, name, job, image, text } = people[index];
   const checkNumber = (number) => {
     if (number > people.length - 1) {
@@ -26,7 +26,7 @@ const Review = () => {
     if (rendomNumber === index) {
       rendomNumber = index + 1;
     }
-    setIndex(checkNumber(rendomNumber)); 
+    setIndex(checkNumber(rendomNumber));
   };
 
   const nextPerson = () => {
