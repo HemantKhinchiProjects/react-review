@@ -12,16 +12,33 @@ const Review = () => {
   const [index, setIndex] = useState(0);
   console.log(people);
   const { id, name, job, image, text } = people[index];
+  const checkNumber = (number) => {
+    if (number > people.length - 1) {
+      return 0;
+    }
+    if (number < 0) {
+      return people.length - 1;
+    }
+    return number;
+  };
+  const randomPerson = () => {
+    let rendomNumber = Math.floor(Math.random() * people.length);
+    if (rendomNumber === index) {
+      rendomNumber = index + 1;
+    }
+    setIndex(checkNumber(rendomNumber));
+  };
+
   const nextPerson = () => {
     setIndex((index) => {
       let newIndex = index + 1;
-      return newIndex;
+      return checkNumber(newIndex);
     });
   };
   const preProson = () => {
     setIndex((index) => {
       let newIndex = index - 1;
-      return newIndex;
+      return checkNumber(newIndex);
     });
   };
 
@@ -44,7 +61,9 @@ const Review = () => {
           <FontAwesomeIcon icon={faChevronRight} />
         </button>
       </div>
-      <button className="random-btn">Surprise me</button>
+      <button className="random-btn" onClick={randomPerson}>
+        Surprise me
+      </button>
     </article>
   );
 };
