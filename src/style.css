@@ -199,6 +199,13 @@ main {
   background: var(--clr-primary-5);
   color: var(--clr-white);
 }
+.quote-icon svg {
+  fill: var(--clr-white);
+}
+.prev-btn svg,
+.next-btn svg {
+  fill: var(--clr-primary-5);
+}
 .img-container::before {
   content: '';
   width: 100%;
